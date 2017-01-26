@@ -1,4 +1,5 @@
 package edu.gatech.oad.antlab.person;
+import java.util.Random;
 
 /**
  *  A simple class for person 2
@@ -30,8 +31,21 @@ public class Person2 {
 	 * @return the modified string
 	 */
 	private String calc(String input) {
-	  //Person 2 put your implementation here
-	  return null;
+	    String mix = "";
+		String[] stringAry = input.split("");
+		String[] mixed = new String[input.length()];
+		Random rand = new Random();
+		for (int i = 0; i < input.length(); i++) {
+		    int randInt = rand.nextInt(input.length());
+		    while (mixed[randInt] != null) {
+		        randInt = (randInt + 1) % mixed.length;
+            }
+            mixed[randInt] = stringAry[i];
+        }
+        for (int i = 0; i < mixed.length; i++) {
+		    mix = mix + mixed[i];
+        }
+		return mix;
 	}
 	/**
 	 * Return a string rep of this object
