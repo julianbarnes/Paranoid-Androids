@@ -10,7 +10,7 @@ package edu.gatech.oad.antlab.person;
  */
 public class Person1 {
   /** Holds the persons real name */
-  private String name = "Naoto Abe";
+  private String name = "Naoto";
   	/**
 	 * The constructor, takes in the persons
 	 * name
