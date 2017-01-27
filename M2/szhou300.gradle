@@ -12,5 +12,4 @@ attributes ("Main-Class" : "edu.gatech.oad.antlab.pkg1.AntLabMain",
 }
 }
 
-Add this line so it automatically compiles everything
 defaultTasks 'jar'
