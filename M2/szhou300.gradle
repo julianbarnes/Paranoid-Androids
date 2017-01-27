@@ -11,3 +11,6 @@ attributes ("Main-Class" : "edu.gatech.oad.antlab.pkg1.AntLabMain",
 "Class-Path" : "../../lib/resources.jar")
 }
 }
+
+Add this line so it automatically compiles everything
+defaultTasks 'jar'
