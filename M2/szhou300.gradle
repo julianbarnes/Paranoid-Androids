@@ -1,0 +1,13 @@
+apply plugin: "java"
+
+dependencies {
+compile files('lib/resources.jar')
+testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+jar {
+manifest {
+attributes ("Main-Class" : "edu.gatech.oad.antlab.pkg1.AntLabMain",
+"Class-Path" : "../../lib/resources.jar")
+}
+}
