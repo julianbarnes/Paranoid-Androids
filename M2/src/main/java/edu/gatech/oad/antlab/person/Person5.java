@@ -29,10 +29,11 @@ public class Person5 {
 	 * @param input the string to be modified
 	 * @return the modified string
 	 */
-	private String calc(String input) {
-	  //Person 5 put your implementation here
-	  return null;
-	}
+	 private String calc(String input) {
+        String newStr = str.substring(2) + str.substring(0,2);
+        return newStr;
+    }
+     //Person 5 put your implementation here
 	
 	/**
 	 * Return a string rep of this object
