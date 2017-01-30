@@ -1,3 +1,4 @@
+defaultTasks 'jar'
 apply plugin: 'java'
 apply plugin: 'application'
 
@@ -12,5 +13,3 @@ jar  {
                 'Class-Path' : '../../lib/resources.jar'
     }
 }
-
-defaultTasks 'jar'
