@@ -1,1 +1,0 @@
-Hello my name is Julian Barnes. My emaill is jbarnes42@gatech.edu. I love this class so much.
