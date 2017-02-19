@@ -17,4 +17,6 @@
     <string name="close">Close</string>
     <string name="water_app">Water App</string>
     <string name="logout">logout</string>
+    <string name="title_activity_welcome_screen">WelcomeScreen</string>
+    <string name="title_activity_register">Sign up</string>
 </resources>
