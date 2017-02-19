@@ -23,8 +23,9 @@
 
     <ScrollView
         android:id="@+id/login_form"
-        android:layout_width="match_parent"
-        android:layout_height="379dp">
+        android:layout_width="348dp"
+        android:layout_height="358dp"
+        android:layout_weight="0.76">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -62,6 +63,13 @@
                 android:textStyle="bold"
                 android:layout_weight="3.75" />
 
+            <Button
+                android:text="Cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancel_sign_in" />
+
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
