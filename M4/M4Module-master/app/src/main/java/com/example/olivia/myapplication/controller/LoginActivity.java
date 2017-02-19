@@ -189,8 +189,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return password.length() > 1;
+        //length is from 8 to 14 characters
+        // at least 1 digit
+        // at least 1 Uppercase letter
+        // at least 1 Lowercase Letter
+        String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
+        return password.matches(regexp);
     }
 
     /**
