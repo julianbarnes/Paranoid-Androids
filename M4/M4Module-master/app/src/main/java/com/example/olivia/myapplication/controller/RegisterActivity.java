@@ -20,6 +20,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         final Button registerButton = (Button) findViewById(R.id.registerButton);
         final Button cancelButton = (Button) findViewById(R.id.cancelButton);
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
