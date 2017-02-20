@@ -7,15 +7,14 @@ import java.util.Map;
  * Created by Olivia on 2/12/2017.
  */
 
-public class UserManager implements AuthenticationFacade, UserManagementFacade {
+public class UserManager implements AuthenticationFacade {
     private static Map<String, User> users = new HashMap<>();
-
 
     public User findUserById(String id) {
         return users.get(id);
     }
 
-    public void addUser(String name, String pass) {
+    public static void addUser(String name, String pass) {
         User user = new User(name, pass);
         users.put(name, user);
 
@@ -25,7 +24,5 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         User u = findUserById(name);
         return u!=null && u.checkPassword(pass);
     }
-
-
 
 }
