@@ -8,6 +8,7 @@ import java.util.Map;
  */
 
 public class UserManager implements AuthenticationFacade, UserManagementFacade {
+    User u;// Modified by Rayna to enable accessing the user from LoginActivity
     private static Map<String, User> users = new HashMap<>();
 
 
@@ -21,9 +22,14 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
     }
 
     public boolean handleLoginRequest(String name, String pass) {
-        User u = findUserById(name);
+        u = findUserById(name);//Modified by Rayna
         return u!=null && u.checkPassword(pass);
     }
+    public User getUser(){ // Added by Rayna
+        return u;
+    }
+
+
 
 
 
