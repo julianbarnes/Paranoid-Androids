@@ -21,4 +21,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="47dp" />
 
+    <Button
+        android:text="Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/profile_button"
+        android:layout_alignLeft="@+id/logout_button"
+        android:layout_alignStart="@+id/logout_button" />
+
 </RelativeLayout>

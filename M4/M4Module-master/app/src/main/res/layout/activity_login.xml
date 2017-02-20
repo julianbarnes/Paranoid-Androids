@@ -43,10 +43,10 @@
                 android:maxLines="1" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/login_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_password"
+                android:layout_height="match_parent"
+                android:hint="Password"
                 android:imeActionId="@+id/login"
                 android:imeActionLabel="@string/action_sign_in_short"
                 android:imeOptions="actionUnspecified"
@@ -67,7 +67,11 @@
                 android:text="Cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
+                android:id="@+id/login_cancel_button" />
+=======
                 android:id="@+id/cancel_sign_in" />
+>>>>>>> a18672ffa5e5c55a5b343f573e88781b41705207
 
         </LinearLayout>
     </ScrollView>

@@ -32,6 +32,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.example.olivia.myapplication.model.Manager;
 import com.example.olivia.myapplication.model.UserManager;
 import com.example.olivia.myapplication.model.User;
 
@@ -74,7 +76,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mUserView = (AutoCompleteTextView) findViewById(R.id.user);
         populateAutoComplete();
 
-        mPasswordView = (EditText) findViewById(R.id.password);
+        mPasswordView = (EditText) findViewById(R.id.login_password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -83,6 +85,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     return true;
                 }
                 return false;
+            }
+        });
+
+        Button login_cancel = (Button) findViewById(R.id.login_cancel_button);
+        login_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),WelcomeScreen.class));
             }
         });
 
@@ -141,7 +151,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 
-
     /**
      * Attempts to sign in or register the account specified by the login form.
      * If there are form errors (invalid email, missing fields, etc.), the
@@ -164,7 +173,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         View focusView = null;
 
         // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+        if (TextUtils.isEmpty(password) && !isPasswordValid(password)) {
             mPasswordView.setError(getString(R.string.error_invalid_password));
             focusView = mPasswordView;
             cancel = true;
@@ -205,7 +214,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //        return password.matches(regexp);
 //    }
     private boolean isPasswordValid(String password) {
+<<<<<<< HEAD
+        //length is from 8 to 14 characters
+        // at least 1 digit
+        // at least 1 Uppercase letter
+        // at least 1 Lowercase Letter
+
+        String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
+        return password.matches(regexp);
+=======
         return password.length() > 1;
+>>>>>>> a18672ffa5e5c55a5b343f573e88781b41705207
     }
     /**
      * Shows the progress UI and hides the login form.
@@ -356,6 +375,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
     }
 }
 

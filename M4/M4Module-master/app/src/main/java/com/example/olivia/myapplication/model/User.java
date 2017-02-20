@@ -5,8 +5,8 @@ package com.example.olivia.myapplication.model;
  */
 
 public class User {
-    String name;
-    String password;
+    private String name;
+    private String password;
 
     public User(String n, String p) {
         name = n;
