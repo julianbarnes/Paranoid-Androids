@@ -13,6 +13,7 @@ import android.widget.Button;
 public class DummyApp extends AppCompatActivity {
 
     private Button logoutButton;
+    private Button profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,20 @@ public class DummyApp extends AppCompatActivity {
         setContentView(R.layout.dummy_app);
 
         logoutButton = (Button) findViewById(R.id.logout_button);
+        profileButton = (Button) findViewById(R.id.profile_button);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DummyApp.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DummyApp.this, Profile_Screen.class);
+                //.putExtra
                 startActivity(intent);
                 finish();
             }

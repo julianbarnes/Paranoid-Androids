@@ -35,6 +35,7 @@ import java.util.List;
 
 import com.example.olivia.myapplication.model.Manager;
 import com.example.olivia.myapplication.model.UserManager;
+import com.example.olivia.myapplication.model.User;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -54,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     private UserLoginTask mAuthTask = null;
+    private User user;
 
     // UI references.
     private AutoCompleteTextView mUserView;
@@ -70,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         setContentView(R.layout.activity_login);
         // Set up the login form.
         manager.addUser("user","pass");
+
         mUserView = (AutoCompleteTextView) findViewById(R.id.user);
         populateAutoComplete();
 
@@ -217,9 +220,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // at least 1 Uppercase letter
         // at least 1 Lowercase Letter
 
+
         String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
         return password.matches(regexp);
-
     }
     /**
      * Shows the progress UI and hides the login form.
@@ -342,7 +345,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                    // Account exists, return true if the password matches.
 //                    return pieces[1].equals(mPassword);
 //                }
-            return manager.handleLoginRequest(mUser, mPassword);
+            boolean bool =  manager.handleLoginRequest(mUser, mPassword);
+            user = manager.getUser();
+            return bool;
 
 
             // TODO: register the new account here.

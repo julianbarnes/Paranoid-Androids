@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.example.olivia.myapplication.model.User;
 import com.example.olivia.myapplication.model.UserManager;
+//import com.example.olivia.myapplication.model.User;
+//import com.example.olivia.myapplication.model.UserManager;
 
-import static com.example.olivia.myapplication.model.UserManager.addUser;
+//import static com.example.olivia.myapplication.model.UserManager.*;
 
 /**
  * A register page that lets new users register for a new account with a username and a password
@@ -22,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final UserManager manager = new UserManager();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -36,12 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String username = etUsername.getText().toString();
                 final String password = etPassword.getText().toString();
-                addUser(username, password);
+                manager.addUser(username, password);
                 startActivity(new Intent(getApplicationContext(), WelcomeScreen.class));
             }
         });
 
         final Button cancelButton = (Button) findViewById(R.id.cancelButton);
+
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
