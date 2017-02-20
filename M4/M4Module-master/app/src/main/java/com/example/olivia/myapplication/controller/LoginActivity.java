@@ -211,7 +211,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //        return password.matches(regexp);
 //    }
     private boolean isPasswordValid(String password) {
-<<<<<<< HEAD
+
         //length is from 8 to 14 characters
         // at least 1 digit
         // at least 1 Uppercase letter
@@ -219,9 +219,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
         return password.matches(regexp);
-=======
-        return password.length() > 1;
->>>>>>> a18672ffa5e5c55a5b343f573e88781b41705207
+
     }
     /**
      * Shows the progress UI and hides the login form.

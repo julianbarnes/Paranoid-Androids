@@ -12,6 +12,12 @@ import com.example.olivia.myapplication.model.UserManager;
 
 import static com.example.olivia.myapplication.model.UserManager.addUser;
 
+/**
+ * A register page that lets new users register for a new account with a username and a password
+ * Cancel button will take you bacck to the welcome page.
+ *
+ *
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
