@@ -30,6 +30,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.FileOutputStream;
+import java.io.IOError;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,6 +70,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     //Model database
     private UserManager manager = new UserManager();
 
+//    public static void writeToFile(User user) throws IOException {
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("User.bin"));
+//        objectOutputStream.writeObject(user);
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -347,6 +355,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 //                }
             boolean bool =  manager.handleLoginRequest(mUser, mPassword);
             user = manager.getUser();
+
             return bool;
 
 
@@ -360,6 +369,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             if (success) {
                 Intent intent = new Intent(LoginActivity.this, DummyApp.class);
+                intent.putExtra("user", user);
                 startActivity(intent);
                 finish();
             } else {
