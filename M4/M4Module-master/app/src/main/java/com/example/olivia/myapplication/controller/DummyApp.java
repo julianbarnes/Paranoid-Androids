@@ -14,7 +14,8 @@ public class DummyApp extends AppCompatActivity {
 
     private Button logoutButton;
     private Button profileButton;
-    private static User user;
+    //private static User user;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

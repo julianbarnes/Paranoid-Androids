@@ -44,10 +44,6 @@ public class User implements Serializable{
         return userType;
     }
 
-    public void nameChanger(String newName) {
-        name = newName;
-    }
-
     public void setEmail(String newEmail) {
         email = newEmail;
     }

@@ -27,10 +27,13 @@ import static com.example.olivia.myapplication.controller.R.styleable.Spinner;
  *
  */
 public class RegisterActivity extends AppCompatActivity {
+    private UserManager manager = new UserManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final UserManager manager = new UserManager();
+        //final UserManager manager = new UserManager();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -55,7 +58,6 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = etEmail.getText().toString();
                 final String address = etAddress.getText().toString();
                 final String userType = etSpinner.getSelectedItem().toString();
-                User newUser = new User(id, username, password, email, address, userType);
                 manager.addUser(id, username, password, email, address, userType);
                 startActivity(new Intent(getApplicationContext(), WelcomeScreen.class));
                 finish();

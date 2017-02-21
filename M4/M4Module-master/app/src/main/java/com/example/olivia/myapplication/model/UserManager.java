@@ -23,6 +23,9 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         User userObject = new User(id, name, pass, email, address, userType);
         users.put(id, userObject);
     }
+    public void deleteUser(String id) {
+        users.remove(id);
+    }
 
 
     public boolean handleLoginRequest(String id, String pass) {

@@ -21,18 +21,25 @@ public class Profile_Screen extends AppCompatActivity {
     private EditText email;
     private EditText homeAddress;
     private EditText password;
-    private User user;
+    private static User user;
     private Button cancelButton;
+    private UserManager manager = new UserManager();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final UserManager manager = new UserManager();
+
 
         try {
             super.onCreate(savedInstanceState);
-            Bundle extras = getIntent().getExtras();
-            if (extras != null) {
-                user = (User)getIntent().getSerializableExtra("user"); //Obtaining data
+            {
+                Bundle extras = getIntent().getExtras();
+                if (extras != null) {
+                    User user2 = (User) getIntent().getSerializableExtra("user"); //Obtaining data
+                    if (user2 != null) {
+                        user = user2;
+                    }
+                }
             }
 
             setContentView(R.layout.activity_profile__screen);
@@ -65,6 +72,9 @@ public class Profile_Screen extends AppCompatActivity {
                     final String userpassword = password.getText().toString();
                     final String useremail = email.getText().toString();
                     final String useraddress = homeAddress.getText().toString();
+                    manager.deleteUser(user.getId());
+                    user = new User(user.getId(), username, userpassword, useremail, useraddress, user.getUserType());
+                    manager.addUser(user.getId(), username, userpassword, useremail, useraddress, user.getUserType());
                     startActivity(new Intent(getApplicationContext(), DummyApp.class));
                     finish();
                 }
