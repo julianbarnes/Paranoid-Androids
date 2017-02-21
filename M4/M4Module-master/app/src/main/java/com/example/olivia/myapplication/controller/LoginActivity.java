@@ -20,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,9 +41,10 @@ import java.util.List;
 import com.example.olivia.myapplication.model.Manager;
 import com.example.olivia.myapplication.model.UserManager;
 import com.example.olivia.myapplication.model.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static android.Manifest.permission.READ_CONTACTS;
-
 
 /**
  * A login screen that offers login via email/password.
@@ -67,8 +69,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
-    //Model database
+    //Declaring objects for Firebase
     private UserManager manager = new UserManager();
+    private FirebaseAuth.AuthStateListener mAuthListener;
+
+    //Firebase Authentication variable
 
 //    public static void writeToFile(User user) throws IOException {
 //        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("User.bin"));
@@ -115,6 +120,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
+
+
 
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {

@@ -52,7 +52,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".Profile_Screen"></activity>
+        <activity android:name=".Profile_Screen" />
+        <activity
+            android:name=".FirebaseLoginActivity"
+            android:label="@string/title_activity_firebase_login"></activity>
     </application>
 
 </manifest>
