@@ -58,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
                 User newUser = new User(id, username, password, email, address, userType);
                 manager.addUser(id, username, password, email, address, userType);
                 startActivity(new Intent(getApplicationContext(), WelcomeScreen.class));
+                finish();
             }
         });
 
