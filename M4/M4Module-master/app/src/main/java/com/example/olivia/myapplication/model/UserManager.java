@@ -1,5 +1,7 @@
 package com.example.olivia.myapplication.model;
 
+import android.widget.EditText;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,13 +15,23 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
 
     private static Map<String, User> users = new HashMap<>();
 
-    public User findUserById(String id) {
-        return users.get(id);
+    public User findUserById(String name) {
+        return users.get(name);
     }
 
     public void addUser(String name, String pass) {
         User user = new User(name, pass);
         users.put(name, user);
+    }
+
+    public void editUser(String name, String newName) {
+        User user = users.get(name);
+        String pass = user.PasswordGetter();
+        users.remove(name);
+        User newUser = new User(name, pass);
+        //user.nameChanger(newName);
+        users.put(newName, newUser);
+
     }
 
     public boolean handleLoginRequest(String name, String pass) {
@@ -28,7 +40,7 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
     }
     public User getUser(){ // Added by Rayna
         return u;
-    }
+    } // Added by Rayna
 
 
 

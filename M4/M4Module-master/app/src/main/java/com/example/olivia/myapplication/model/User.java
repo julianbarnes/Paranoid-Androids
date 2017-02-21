@@ -17,6 +17,7 @@ public class User implements Serializable{
     public String nameGetter() {
         return name;
     } // Added by Rayna
+    public String PasswordGetter() {return password;}
     public void nameChanger(String newName) {
         name = newName;
     }
