@@ -41,8 +41,6 @@ import java.util.List;
 import com.example.olivia.myapplication.model.Manager;
 import com.example.olivia.myapplication.model.UserManager;
 import com.example.olivia.myapplication.model.User;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -71,7 +69,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     //Declaring objects for Firebase
     private UserManager manager = new UserManager();
-    private FirebaseAuth.AuthStateListener mAuthListener;
 
     //Firebase Authentication variable
 
