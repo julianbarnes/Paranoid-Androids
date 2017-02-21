@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-        manager.addUser("user","pass");
+        manager.addUser("id", "user","pass", "email", "address", "usertype");
 
         mUserView = (AutoCompleteTextView) findViewById(R.id.user);
         populateAutoComplete();
@@ -228,11 +228,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // at least 1 Uppercase letter
         // at least 1 Lowercase Letter
 
-      //  String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
-        //return password.matches(regexp);
 
-        return password.length() > 1;
-
+        String regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$";
+        return password.matches(regexp);
     }
     /**
      * Shows the progress UI and hides the login form.

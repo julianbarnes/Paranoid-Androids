@@ -7,22 +7,56 @@ import java.io.Serializable;
  */
 
 public class User implements Serializable{
+    private String id;
     private String name;
     private String password;
+    private String email;
+    private String address;
+    private String userType;
 
-    public User(String n, String p) {
+    public User(String i, String n, String p, String e, String a, String u) {
+        id = i;
         name = n;
         password = p;
+        email = e;
+        address = a;
+        userType = u;
+    }
+
+    public String getId() {
+        return id;
     }
     public String nameGetter() {
         return name;
     } // Added by Rayna
+<<<<<<< HEAD
     public String PasswordGetter() {return password;}
+=======
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getUserType() {
+        return userType;
+    }
+
+>>>>>>> 4fd99cf2cd570294a5cfba1d42cacf9f0b7953bb
     public void nameChanger(String newName) {
         name = newName;
     }
 
+    public void setEmail(String newEmail) {
+        email = newEmail;
+    }
 
+    public void setAddress(String newAddress) {
+        address = newAddress;
+    }
 
     public boolean checkPassword(String pass) {
         return password.equals(pass);

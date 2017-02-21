@@ -10,51 +10,110 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.olivia.myapplication.controller.RegisterActivity">
 
+    <Button
+        android:text="Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancelButton"
+        android:layout_alignBaseline="@+id/registerButton"
+        android:layout_alignBottom="@+id/registerButton"
+        android:layout_toRightOf="@+id/registerButton"
+        android:layout_toEndOf="@+id/registerButton"
+        android:layout_marginLeft="44dp"
+        android:layout_marginStart="44dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="id"
+        android:ems="10"
+        android:id="@+id/etId"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:hint="userID" />
+
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:layout_below="@+id/etName"
+        android:id="@+id/etUsername"
+        android:hint="Username"
+        android:layout_below="@+id/etId"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/etUsername"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="Username" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
+        android:id="@+id/etPassword"
+        android:hint="password"
         android:layout_below="@+id/etUsername"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/etPassword"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:hint="password" />
+        android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="Register"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/registerButton"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/etEmail"
+        android:hint="Email"
         android:layout_below="@+id/etPassword"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="Cancel"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/cancelButton"
-        android:layout_below="@+id/registerButton"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/etAddress"
+        android:hint="address"
+        android:layout_below="@+id/etEmail"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userTypeSpinner"
+        android:spinnerMode="dialog"
+        android:layout_below="@+id/etAddress"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="User Type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/userTypeSpinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/etUserType" />
+
+    <Button
+        android:text="Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/registerButton"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/etUserType"
+        android:layout_toRightOf="@+id/etUserType"
+        android:layout_toEndOf="@+id/etUserType" />
+
 </RelativeLayout>

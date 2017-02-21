@@ -5,7 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-
+/**
+ * a welcome screen that has two buttons. Login button will take a user to a login page, and a
+ * register button that will take users to a register activity that let users register for a
+ * new acount.
+ *
+ */
 public class WelcomeScreen extends AppCompatActivity {
 
     Button login;
