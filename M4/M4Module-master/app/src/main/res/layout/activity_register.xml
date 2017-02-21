@@ -107,9 +107,11 @@
 
     <Button
         android:text="Register"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/registerButton"
+        android:onClick="showAlert"
         android:layout_marginTop="48dp"
         android:layout_below="@+id/etUserType"
         android:layout_toRightOf="@+id/etUserType"
