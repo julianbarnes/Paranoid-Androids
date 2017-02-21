@@ -29,9 +29,8 @@ public class User implements Serializable{
     public String nameGetter() {
         return name;
     } // Added by Rayna
-<<<<<<< HEAD
+
     public String PasswordGetter() {return password;}
-=======
 
     public String getEmail() {
         return email;
@@ -45,7 +44,6 @@ public class User implements Serializable{
         return userType;
     }
 
->>>>>>> 4fd99cf2cd570294a5cfba1d42cacf9f0b7953bb
     public void nameChanger(String newName) {
         name = newName;
     }

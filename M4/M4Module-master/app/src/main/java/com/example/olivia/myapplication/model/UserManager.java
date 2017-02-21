@@ -25,12 +25,13 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
     }
 
     public void editUser(String name, String newName) {
-        User user = users.get(name);
-        String pass = user.PasswordGetter();
-        users.remove(name);
-        User newUser = new User(name, pass);
+        //User user = users.get(name);
+        //String pass = user.PasswordGetter();
+        //users.remove(name);
+        //User newUser = new User(name, pass);
         //user.nameChanger(newName);
-        users.put(newName, newUser);
+        //users.put(newName, newUser);
+        System.out.println("ok");
 
     }
 
