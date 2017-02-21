@@ -8,7 +8,7 @@ package com.example.olivia.myapplication.model;
 
 public class Admin extends User {
 
-    public Admin(String name, String password) {
-        super(name, password);
+    public Admin(String id, String name, String password, String email, String address) {
+        super(id, name, password, email, address);
     }
 }
