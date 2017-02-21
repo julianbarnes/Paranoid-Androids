@@ -17,8 +17,8 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         return users.get(id);
     }
 
-    public void addUser(String id, String name, String pass, String email, String address) {
-        User userObject = new User(id, name, pass, email, address);
+    public void addUser(String id, String name, String pass, String email, String address, String userType) {
+        User userObject = new User(id, name, pass, email, address, userType);
         users.put(name, userObject);
     }
 

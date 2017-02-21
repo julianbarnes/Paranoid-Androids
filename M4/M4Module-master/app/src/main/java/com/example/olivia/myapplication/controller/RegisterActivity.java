@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import com.example.olivia.myapplication.model.User;
 import com.example.olivia.myapplication.model.UserManager;
+import com.example.olivia.myapplication.model.userType;
+
+import static com.example.olivia.myapplication.controller.R.styleable.Spinner;
 //import com.example.olivia.myapplication.model.User;
 //import com.example.olivia.myapplication.model.UserManager;
 
@@ -28,6 +34,11 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        final Spinner etSpinner = (Spinner) findViewById(R.id.userTypeSpinner);
+        final ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, userType.values());
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        etSpinner.setAdapter(adapter2);
+
         final EditText etId = (EditText) findViewById(R.id.etId);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
@@ -43,8 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password = etPassword.getText().toString();
                 final String email = etEmail.getText().toString();
                 final String address = etAddress.getText().toString();
-                User newUser = new User(id, username, password, email, address);
-                manager.addUser(id, username, password, email, address);
+                final String userType = etSpinner.getSelectedItem().toString();
+                User newUser = new User(id, username, password, email, address, userType);
+                manager.addUser(id, username, password, email, address, userType);
                 startActivity(new Intent(getApplicationContext(), WelcomeScreen.class));
             }
         });

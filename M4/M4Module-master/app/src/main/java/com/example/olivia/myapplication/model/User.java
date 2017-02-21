@@ -12,13 +12,15 @@ public class User implements Serializable{
     private String password;
     private String email;
     private String address;
+    private String userType;
 
-    public User(String i, String n, String p, String e, String a) {
+    public User(String i, String n, String p, String e, String a, String u) {
         id = i;
         name = n;
         password = p;
         email = e;
         address = a;
+        userType = u;
     }
 
     public String getId() {
@@ -34,6 +36,10 @@ public class User implements Serializable{
 
     public String getAddress() {
         return address;
+    }
+
+    public String getUserType() {
+        return userType;
     }
 
     public void nameChanger(String newName) {

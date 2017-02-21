@@ -5,6 +5,6 @@ package com.example.olivia.myapplication.model;
  */
 
 public interface UserManagementFacade {
-    void addUser(String id, String name, String pass, String email, String address);
+    void addUser(String id, String name, String pass, String email, String address, String userType);
     User findUserById(String id);
 }
