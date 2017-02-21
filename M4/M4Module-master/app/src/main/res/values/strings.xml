@@ -19,4 +19,5 @@
     <string name="logout">logout</string>
     <string name="title_activity_welcome_screen">WelcomeScreen</string>
     <string name="title_activity_register">Sign up</string>
+    <string name="title_activity_firebase_login">Sign in</string>
 </resources>

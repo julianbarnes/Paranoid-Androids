@@ -11,4 +11,8 @@ public class Worker extends User {
     public Worker(String id, String name, String password, String email, String address, String userType) {
         super(id, name, password, email, address, userType);
     }
+
+    public void ReportWaterPurity() {
+        System.out.println("Report water purity");
+    }
 }
