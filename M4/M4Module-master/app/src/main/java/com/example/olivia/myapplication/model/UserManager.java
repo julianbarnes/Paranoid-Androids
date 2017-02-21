@@ -15,28 +15,18 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
 
     private static Map<String, User> users = new HashMap<>();
 
-    public User findUserById(String name) {
-        return users.get(name);
+    public User findUserById(String id) {
+        return users.get(id);
     }
 
     public void addUser(String id, String name, String pass, String email, String address, String userType) {
         User userObject = new User(id, name, pass, email, address, userType);
-        users.put(name, userObject);
+        users.put(id, userObject);
     }
 
-    public void editUser(String name, String newName) {
-        //User user = users.get(name);
-        //String pass = user.PasswordGetter();
-        //users.remove(name);
-        //User newUser = new User(name, pass);
-        //user.nameChanger(newName);
-        //users.put(newName, newUser);
-        System.out.println("ok");
 
-    }
-
-    public boolean handleLoginRequest(String name, String pass) {
-        u = findUserById(name);//Modified by Rayna
+    public boolean handleLoginRequest(String id, String pass) {
+        u = findUserById(id);//Modified by Rayna
         return u!=null && u.checkPassword(pass);
     }
     public User getUser(){ // Added by Rayna
