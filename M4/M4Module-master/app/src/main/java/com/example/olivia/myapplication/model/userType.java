@@ -14,6 +14,10 @@ public enum userType {
 
     private String userType;
 
+    /**
+     *  returns the userType of this user
+     * @param userType an enum userType that
+     */
     private userType(String userType) {
         this.userType = userType;
     }

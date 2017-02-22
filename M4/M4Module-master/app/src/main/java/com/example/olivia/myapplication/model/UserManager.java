@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Olivia on 2/12/2017.
+ * Created by Olivia and Naoto on 2/12/2017.
  *
  * a class that initializes a HashMap that holds all of our user accounts.
  */
@@ -17,6 +17,12 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
 
     private static Map<String, User> users = new HashMap<>();
 
+    /**
+     * a public method that finds user by userID. used to display profile information in profile
+     * edit page.
+     * @param id takes in the id of the user
+     * @return returns the id of the user?    <-- needs clarification
+     */
     public User findUserById(String id) {
         return users.get(id);
     }
@@ -37,19 +43,32 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         users.put(id, userObject);
     }
 
+    /**
+     * method that lets the UserManager class delete a specific user by id
+     * @param id takes in the userId that gets searched to be removed
+     */
     public void deleteUser(String id) {
         users.remove(id);
     }
 
-
+    /**
+     * method that checks if the user typed in a valid userId and password, or if anything
+     * at all
+     * @param id takes in a String id that should correspond to userId
+     * @param pass takes in a String password that will get checked against the userID
+     * @return true if the login is successful with the valid credentials, false otherwise
+     */
     public boolean handleLoginRequest(String id, String pass) {
         u = findUserById(id);//Modified by Rayna
         return u!=null && u.checkPassword(pass);
     }
+
+    /**
+     * public accessor that lets other classes access a user object inside the Map
+     * @return returns the user object
+     */
     public User getUser(){ // Added by Rayna
         return u;
     } // Added by Rayna
-
-
 
 }
