@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 /**
  * Created by Olivia on 2/12/2017.
+ *
+ * Super class of all users. This class takes in an id, name, password, email, address, and
+ * the userType (user,Worker,Manager,Admin) when registered. Has the appropriate getters and
+ * setters.
  */
 
 public class User implements Serializable{
@@ -26,6 +30,7 @@ public class User implements Serializable{
     public String getId() {
         return id;
     }
+
     public String nameGetter() {
         return name;
     } // Added by Rayna

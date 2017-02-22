@@ -25,8 +25,7 @@ import static com.example.olivia.myapplication.controller.R.styleable.Spinner;
 
 /**
  * A register page that lets new users register for a new account with a username and a password
- * Cancel button will take you bacck to the welcome page.
- *
+ * Cancel button will take you back to the welcome page.
  *
  */
 public class RegisterActivity extends AppCompatActivity {
@@ -35,23 +34,25 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //final UserManager manager = new UserManager();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        //a spinner that lists the user types in the usertype enum
         final Spinner etSpinner = (Spinner) findViewById(R.id.userTypeSpinner);
         final ArrayAdapter<String> adapter2 = new ArrayAdapter(this,android.R.layout.simple_spinner_item, userType.values());
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         etSpinner.setAdapter(adapter2);
 
+        //represents all the text field that user needs to input to register
         final EditText etId = (EditText) findViewById(R.id.etId);
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
         final EditText etAddress = (EditText) findViewById(R.id.etAddress);
 
-
+        //register button that will, when pressed, create a new user with all the
+        //attributes entered in the text field
         final Button registerButton = (Button) findViewById(R.id.registerButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,9 +81,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //cancel button that takes a user back to the welcome screen
         final Button cancelButton = (Button) findViewById(R.id.cancelButton);
-
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

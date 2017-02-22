@@ -8,13 +8,16 @@ import android.widget.Button;
 import com.example.olivia.myapplication.model.User;
 /**
  * Created by Olivia on 2/12/2017.
+ *
+ * DummyApp is the main page of the water app once the user logs in to his/her profile.
+ * As of now, the only functionality is that the user can view the profile and edit it to
+ * his/her liking
  */
 
 public class DummyApp extends AppCompatActivity {
 
     private Button logoutButton;
     private Button profileButton;
-    //private static User user;
     private User user;
 
     @Override

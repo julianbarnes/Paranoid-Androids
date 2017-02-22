@@ -45,7 +45,7 @@ import com.example.olivia.myapplication.model.User;
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
- * A login screen that offers login via email/password.
+ * A login screen that offers login via username and password
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
@@ -67,15 +67,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
-    //Declaring objects for Firebase
+    //Declaring objects for Firebase, not yet in use
     private UserManager manager = new UserManager();
 
-    //Firebase Authentication variable
-
-//    public static void writeToFile(User user) throws IOException {
-//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("User.bin"));
-//        objectOutputStream.writeObject(user);
-//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

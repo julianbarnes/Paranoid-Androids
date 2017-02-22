@@ -3,7 +3,9 @@ package com.example.olivia.myapplication.model;
 /**
  * Created by naoto on 2/18/2017.
  *
- *  a sub class of user. takes in a name and a password
+ *  a sub class of user. Can do everything that a user can do plus an added method
+ *  ReportWaterPurity that that lets Workers view water purity
+ *
  */
 
 public class Worker extends User {
