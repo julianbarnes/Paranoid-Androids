@@ -41,7 +41,6 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         users.remove(id);
     }
 
-
     public boolean handleLoginRequest(String id, String pass) {
         u = findUserById(id);//Modified by Rayna
         return u!=null && u.checkPassword(pass);
@@ -49,7 +48,5 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
     public User getUser(){ // Added by Rayna
         return u;
     } // Added by Rayna
-
-
 
 }

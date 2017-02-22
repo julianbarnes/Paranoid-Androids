@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by Naoto 2/17/2017
  *
  * a welcome screen that has two buttons. Login button will take a user to a login page, and a
  * register button that will take users to a register activity that let users register for a
  * new account.
+ * @author Naoto Abe
  *
  */
 public class WelcomeScreen extends AppCompatActivity {

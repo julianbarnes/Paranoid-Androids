@@ -13,7 +13,11 @@ import com.example.olivia.myapplication.model.User;
 import com.example.olivia.myapplication.model.UserManager;
 
 /**
- * Created by Rayna on 2/19/17
+ * Profile Screen which user can access after logged in
+ * Edit Button enable you to edit your profile information
+ * Cancel Button takes you back to dummyApp page
+ * @author Ran Yi
+ * @version 1.0
  */
 
 public class Profile_Screen extends AppCompatActivity {

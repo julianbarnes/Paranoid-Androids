@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Olivia on 2/10/2017.
  * A welcome screen that displays while the app initially loads.
+ * @author Olivia
  */
 
 public class SplashActivity extends AppCompatActivity {
