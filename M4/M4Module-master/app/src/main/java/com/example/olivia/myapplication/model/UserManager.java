@@ -51,6 +51,7 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
         users.remove(id);
     }
 
+<<<<<<< HEAD
     /**
      * method that checks if the user typed in a valid userId and password, or if anything
      * at all
@@ -58,6 +59,8 @@ public class UserManager implements AuthenticationFacade, UserManagementFacade {
      * @param pass takes in a String password that will get checked against the userID
      * @return true if the login is successful with the valid credentials, false otherwise
      */
+=======
+>>>>>>> fc3b2d7ca59638dc6f9fc8f7552f8ab8c37c98da
     public boolean handleLoginRequest(String id, String pass) {
         u = findUserById(id);//Modified by Rayna
         return u!=null && u.checkPassword(pass);

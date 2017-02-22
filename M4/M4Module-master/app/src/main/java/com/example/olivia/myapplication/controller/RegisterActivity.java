@@ -26,7 +26,8 @@ import static com.example.olivia.myapplication.controller.R.styleable.Spinner;
 /**
  * A register page that lets new users register for a new account with a username and a password
  * Cancel button will take you back to the welcome page.
- *
+ * @author Naoto Abe
+ * @version 1.0
  */
 public class RegisterActivity extends AppCompatActivity {
     private UserManager manager = new UserManager();
